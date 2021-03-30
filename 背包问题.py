@@ -75,7 +75,6 @@ for i in V_W:
     print(W_P_V_W[i],end =' ')
 
 
-
 data = open("结果.txt","w")  #创建保存结果文件
 
 
