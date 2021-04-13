@@ -29,11 +29,15 @@ for line in f:             #按行读取
         print("背包容量 c = ：",c)
     #获取各个物品价值存入V中
     if(lnum == 6 + group * 8):
-        V = line.strip().split(',')  
+        V = line.strip().split(',')
+        Vv = V[-1].split('.')
+        V[-1] = Vv[0]
         #print("物品价值 V = ：",V)
     #获取各个物品重量存入W中      
     if(lnum == 8 + group * 8):
         W =  line.strip().split(',')
+        Ww = W[-1].split('.')
+        W[-1] = Ww[0]
         #print("物品重量 W = ",W)
         
 
@@ -73,6 +77,7 @@ V_W.sort(reverse = True)
 print("对一组D{0-1}KP数据按项集第三项的价值:重量比进行非递增排序如下：")
 for i in V_W:
     print(W_P_V_W[i],end =' ')
+
 
 
 data = open("结果.txt","w")  #创建保存结果文件
